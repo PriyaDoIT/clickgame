@@ -76,14 +76,12 @@ class App extends Component {
     return (
       <div>
         <Wrapper>
-        <Container>
           <Navbar
             correct={this.state.correct}
             score={this.state.score}
             top={this.state.top}
           />
           <Header />
-          </Container>
           <Container>
             {this.state.cards.map(card => (
               <Cards
