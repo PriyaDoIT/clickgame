@@ -38,7 +38,7 @@ class App extends Component {
       //display incorrect message
       correct: "You Guessed Incorrectly!",
       //clear out the guesses
-      gusses: cards,
+      guesses: cards,
       //if score is greater than top score, update top score
       top: (this.state.score > this.state.top) ? this.state.score : this.state.top
     })
@@ -76,14 +76,15 @@ class App extends Component {
     return (
       <div>
         <Wrapper>
+        <Container>
           <Navbar
             correct={this.state.correct}
             score={this.state.score}
             top={this.state.top}
           />
           <Header />
+          </Container>
           <Container>
-          {console.log(cards.image, "container")}
             {this.state.cards.map(card => (
               <Cards
                 key={card.id}
