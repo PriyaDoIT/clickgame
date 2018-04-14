@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Wrapper from "./components/Wrapper";
+import Container from "./components/Container";
 import cards from "./cards.json"
 
 
@@ -71,21 +72,33 @@ class App extends Component {
 
   }
 
-render() {
-  return(
-  <div>
-    <Wrapper>
-      <Navbar 
-       correct={this.state.correct}
-       score={this.state.score}
-       top={this.state.top}
-       />
-      <Header />
-      <Cards />
-      <Footer />
-    </Wrapper>
-  </div>
-  )};
+  render() {
+    return (
+      <div>
+        <Wrapper>
+          <Navbar
+            correct={this.state.correct}
+            score={this.state.score}
+            top={this.state.top}
+          />
+          <Header />
+          <Container>
+          {console.log(cards.image, "container")}
+            {this.state.cards.map(card => (
+              <Cards
+                key={card.id}
+                check={this.check}
+                id={card.id}
+                image={card.image}
+                
+              />
+            ))}
+          </Container>
+          <Footer />
+        </Wrapper>
+      </div>
+    )
+  };
 }
 
 export default App;

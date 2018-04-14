@@ -3,7 +3,7 @@ import "./Navbar.css";
 
 const Navbar = props => (
     <div>
-        <nav className="navbar navbar-default">
+        <nav className="navbar navbar-default navbar-inverse" data-spy="affix" data-offset-top="1">
             <div className="container-fluid">
                 <div className="navbar-header">
                     <a className="navbar-brand" href="/">Clicky Game!</a>
